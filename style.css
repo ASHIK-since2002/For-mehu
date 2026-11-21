@@ -1,0 +1,1086 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+body {
+
+    background: #030611;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    -webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+
+}
+
+
+/* ==========================================
+   APP
+========================================== */
+
+#app {
+
+    position: relative;
+
+    width: 100vw;
+
+    height: 100dvh;
+
+    min-height: 560px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(circle at 50% 18%,
+            #17245b 0%,
+            #0a1230 35%,
+            #030611 78%);
+
+}
+
+
+/* ==========================================
+   CANVAS
+========================================== */
+
+#starCanvas,
+#riverCanvas,
+#particleCanvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+}
+
+
+#starCanvas {
+
+    z-index: 1;
+
+}
+
+
+#riverCanvas {
+
+    z-index: 3;
+
+}
+
+
+#particleCanvas {
+
+    z-index: 70;
+
+}
+
+
+/* ==========================================
+   MOON
+========================================== */
+
+.moon {
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 96px;
+
+    height: 96px;
+
+    top: 7%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(circle at 35% 30%,
+            #ffffff 0%,
+            #fffbe9 58%,
+            #f2e7b7 100%);
+
+    box-shadow:
+
+        0 0 25px rgba(255, 248, 215, .8),
+
+        0 0 70px rgba(255, 238, 170, .35),
+
+        0 0 120px rgba(255, 230, 150, .18);
+
+}
+
+
+/* ==========================================
+   ATMOSPHERIC GLOW
+========================================== */
+
+.ambient-glow {
+
+    position: absolute;
+
+    z-index: 4;
+
+    width: 240px;
+
+    height: 180px;
+
+    left: 50%;
+
+    bottom: 18%;
+
+    transform: translateX(-50%);
+
+    background:
+
+        radial-gradient(ellipse,
+            rgba(71, 100, 173, .12),
+            transparent 70%);
+
+    filter: blur(20px);
+
+}
+
+
+/* ==========================================
+   SCENE
+========================================== */
+
+.scene {
+
+    position: absolute;
+
+    z-index: 20;
+
+    left: 50%;
+
+    bottom: 20%;
+
+    width: 300px;
+
+    height: 280px;
+
+    transform: translateX(-50%);
+
+    animation:
+
+        boatFloat 4.5s ease-in-out infinite;
+
+}
+
+
+@keyframes boatFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(-50%) translateY(0) rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(-50%) translateY(5px) rotate(.5deg);
+
+    }
+
+}
+
+
+/* ==========================================
+   BOAT
+========================================== */
+
+.boat {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 230px;
+
+    height: 72px;
+
+    transform: translateX(-50%);
+
+}
+
+
+.boat-body {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 230px;
+
+    height: 62px;
+
+    background:
+
+        linear-gradient(180deg,
+            #9b6435,
+            #4b2918);
+
+    clip-path:
+
+        polygon(0 0,
+            100% 0,
+            84% 72%,
+            50% 100%,
+            16% 72%);
+
+    box-shadow:
+
+        inset 0 -10px 20px rgba(0, 0, 0, .3);
+
+}
+
+
+.boat-top {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 0;
+
+    left: 7px;
+
+    width: 216px;
+
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: #b57942;
+
+    box-shadow:
+
+        inset 0 -3px 5px rgba(0, 0, 0, .35);
+
+}
+
+
+.boat-shadow {
+
+    position: absolute;
+
+    bottom: -12px;
+
+    left: 20px;
+
+    width: 190px;
+
+    height: 16px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, .35);
+
+    filter: blur(6px);
+
+}
+
+
+/* ==========================================
+   PERSON
+========================================== */
+
+.person {
+
+    position: absolute;
+
+    z-index: 15;
+
+    left: 50%;
+
+    bottom: 39px;
+
+    width: 125px;
+
+    height: 185px;
+
+    transform: translateX(-50%);
+
+}
+
+
+.head {
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 34px;
+
+    height: 34px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #020303;
+
+}
+
+
+.body {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 27px;
+
+    left: 50%;
+
+    width: 64px;
+
+    height: 125px;
+
+    transform: translateX(-50%);
+
+    border-radius:
+
+        32px 32px 10px 10px;
+
+    background:
+
+        linear-gradient(90deg,
+            #020303,
+            #191a1a,
+            #050606);
+
+    box-shadow:
+
+        0 5px 12px rgba(0, 0, 0, .45);
+
+}
+
+
+/* ==========================================
+   ARMS
+========================================== */
+
+.arm {
+
+    position: absolute;
+
+    z-index: 7;
+
+    height: 15px;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(90deg,
+            #050505,
+            #1c1d1d);
+
+    transform-origin: left center;
+
+}
+
+
+.back-arm {
+
+    top: 59px;
+
+    left: 25px;
+
+    width: 66px;
+
+    transform: rotate(20deg);
+
+}
+
+
+.front-arm {
+
+    top: 55px;
+
+    left: 61px;
+
+    width: 91px;
+
+    transform: rotate(-10deg);
+
+    transform-origin: left center;
+
+    animation:
+
+        reachArm 1.5s 4s cubic-bezier(.2, .8, .2, 1) both;
+
+}
+
+
+@keyframes reachArm {
+
+    from {
+
+        transform:
+            rotate(-34deg) scaleX(.72);
+
+    }
+
+    to {
+
+        transform:
+            rotate(-10deg) scaleX(1);
+
+    }
+
+}
+
+
+/* ==========================================
+   BOUQUET
+========================================== */
+
+#bouquet {
+
+    position: absolute;
+
+    z-index: 20;
+
+    top: 35px;
+
+    left: 91px;
+
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    transform:
+
+        translate(-28px, 18px) rotate(-14deg) scale(.65);
+
+    filter:
+
+        drop-shadow(0 8px 12px rgba(0, 0, 0, .55));
+
+    animation:
+
+        giveBouquet 1.8s 4.3s cubic-bezier(.18, .85, .25, 1) forwards;
+
+}
+
+
+@keyframes giveBouquet {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+
+            translate(-28px, 18px) rotate(-14deg) scale(.65);
+
+    }
+
+    55% {
+
+        opacity: 1;
+
+        transform:
+
+            translate(0, -5px) rotate(-5deg) scale(.96);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+
+            translate(5px, 0) rotate(-7deg) scale(1);
+
+    }
+
+}
+
+
+/* ==========================================
+   INTRO
+========================================== */
+
+#intro {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(180deg,
+            rgba(2, 5, 18, .25),
+            rgba(2, 5, 18, .55));
+
+    backdrop-filter:
+        blur(2px);
+
+    transition:
+
+        opacity 1.5s cubic-bezier(.4, 0, .2, 1);
+
+}
+
+
+.intro-content {
+
+    transform:
+        translateY(-2%);
+
+}
+
+
+.intro-small {
+
+    margin-bottom: 16px;
+
+    color:
+        rgba(255, 255, 255, .45);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+}
+
+
+#intro h1 {
+
+    color: white;
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    font-weight: 400;
+
+    text-shadow:
+
+        0 4px 25px rgba(0, 0, 0, .7);
+
+}
+
+
+#intro h1 span {
+
+    color:
+        rgba(255, 255, 255, .82);
+
+}
+
+
+#startButton {
+
+    margin-top: 32px;
+
+    min-width: 185px;
+
+    padding:
+        15px 25px;
+
+    border:
+        1px solid rgba(255, 255, 255, .25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 255, 255, .07);
+
+    color: white;
+
+    font:
+        16px Georgia,
+        serif;
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+
+        0 10px 35px rgba(0, 0, 0, .25);
+
+    transition:
+
+        transform .25s ease,
+        background .25s ease;
+
+}
+
+
+#startButton:active {
+
+    transform: scale(.94);
+
+    background:
+        rgba(255, 255, 255, .14);
+
+}
+
+
+.sunflower-icon {
+
+    margin-left: 8px;
+
+}
+
+
+/* ==========================================
+   MAIN MESSAGE
+========================================== */
+
+#mainMessage {
+
+    position: absolute;
+
+    z-index: 50;
+
+    top: 37%;
+
+    left: 50%;
+
+    width: 100%;
+
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -50%) scale(.8);
+
+}
+
+
+#mainMessage.show {
+
+    animation:
+
+        messageReveal 1.7s cubic-bezier(.2, .85, .25, 1) forwards;
+
+}
+
+
+.message-small {
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255, 255, 255, .45);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+#mainMessage h2 {
+
+    color: white;
+
+    font-size: 43px;
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    text-shadow:
+
+        0 4px 25px rgba(0, 0, 0, .8);
+
+}
+
+
+#mainMessage h2 span {
+
+    color: #ffd21f;
+
+    font-weight: 900;
+
+    text-shadow:
+
+        0 0 10px rgba(255, 210, 31, .7),
+
+        0 0 28px rgba(255, 185, 0, .35);
+
+}
+
+
+@keyframes messageReveal {
+
+    0% {
+
+        opacity: 0;
+
+        filter: blur(12px);
+
+        transform:
+            translate(-50%, -50%) scale(.78);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        filter: blur(0);
+
+        transform:
+            translate(-50%, -50%) scale(1);
+
+    }
+
+}
+
+
+/* ==========================================
+   FINAL MESSAGE
+========================================== */
+
+#finalMessage {
+
+    position: absolute;
+
+    z-index: 55;
+
+    left: 50%;
+
+    bottom: 12%;
+
+    transform:
+        translate(-50%, 25px);
+
+    opacity: 0;
+
+    text-align: center;
+
+    pointer-events: none;
+
+}
+
+
+#finalMessage.show {
+
+    animation:
+
+        finalReveal 1.3s ease forwards;
+
+}
+
+
+#finalMessage p {
+
+    white-space: nowrap;
+
+    padding:
+        13px 24px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    font-size: 18px;
+
+    background:
+        rgba(5, 10, 30, .65);
+
+    border:
+        1px solid rgba(255, 255, 255, .18);
+
+    box-shadow:
+
+        0 8px 35px rgba(0, 0, 0, .35);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+.speech-line {
+
+    width: 30px;
+
+    height: 1px;
+
+    margin:
+        0 auto 8px;
+
+    background:
+        rgba(255, 255, 255, .25);
+
+}
+
+
+@keyframes finalReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+}
+
+
+/* ==========================================
+   MUSIC BUTTON
+========================================== */
+
+.music-button {
+
+    position: absolute;
+
+    z-index: 120;
+
+    right: 17px;
+
+    top: 18px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, .18);
+
+    color: white;
+
+    background:
+        rgba(5, 9, 25, .45);
+
+    backdrop-filter:
+        blur(10px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease,
+        transform .2s ease;
+
+}
+
+
+.music-button.visible {
+
+    opacity: .7;
+
+    pointer-events: auto;
+
+}
+
+
+.music-button:active {
+
+    transform: scale(.9);
+
+}
+
+
+/* ==========================================
+   FIREFLIES
+========================================== */
+
+.firefly {
+
+    position: absolute;
+
+    z-index: 8;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ffe99a;
+
+    box-shadow:
+
+        0 0 7px #ffe99a,
+
+        0 0 15px rgba(255, 220, 100, .7);
+
+    animation:
+
+        fly var(--duration) ease-in-out infinite alternate;
+
+}
+
+
+@keyframes fly {
+
+    from {
+
+        transform:
+            translate(0,
+                0);
+
+        opacity: .15;
+
+    }
+
+    to {
+
+        transform:
+            translate(var(--x),
+                var(--y));
+
+        opacity: .9;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:380px) {
+
+    .moon {
+
+        width: 82px;
+
+        height: 82px;
+
+    }
+
+
+    .scene {
+
+        transform:
+            translateX(-50%) scale(.88);
+
+    }
+
+
+    #mainMessage h2 {
+
+        font-size: 37px;
+
+    }
+
+
+    .message-small {
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+/* ==========================================
+   LARGER SCREEN
+========================================== */
+
+@media(min-width:600px) {
+
+    #app {
+
+        max-width: 430px;
+
+        margin: auto;
+
+        box-shadow:
+
+            0 0 80px rgba(0, 0, 0, .5);
+
+    }
+
+}

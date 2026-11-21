@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#050916">
+
+    <title>For You, Mehu 🌻</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+
+<body>
+
+    <div id="app">
+
+        <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+        <canvas id="starCanvas"></canvas>
+
+        <div class="moon"></div>
+
+        <canvas id="riverCanvas"></canvas>
+
+
+        <!-- =========================
+         FIRELIGHT / ATMOSPHERE
+    ========================== -->
+
+        <div class="ambient-glow"></div>
+
+        <div id="fireflies"></div>
+
+
+        <!-- =========================
+         MAIN SCENE
+    ========================== -->
+
+        <main class="scene">
+
+
+            <!-- BOAT -->
+
+            <div class="boat">
+
+                <div class="boat-top"></div>
+
+                <div class="boat-body"></div>
+
+                <div class="boat-shadow"></div>
+
+            </div>
+
+
+            <!-- BOY -->
+
+            <div class="person">
+
+
+                <div class="head"></div>
+
+
+                <div class="body"></div>
+
+
+                <!-- BACK ARM -->
+
+                <div class="arm back-arm"></div>
+
+
+                <!-- REACHING ARM -->
+
+                <div class="arm front-arm"></div>
+
+
+                <!-- BOUQUET -->
+
+                <img id="bouquet" src="./assets/bouquet.png" alt="Sunflower bouquet">
+
+
+            </div>
+
+
+        </main>
+
+
+        <!-- =========================
+         INTRO
+    ========================== -->
+
+        <section id="intro">
+
+            <div class="intro-content">
+
+                <div class="intro-small">
+                    a little something
+                </div>
+
+
+                <h1>
+                    There is something
+                    <br>
+                    <span>for you...</span>
+                </h1>
+
+
+                <button id="startButton">
+
+                    <span>Tap to begin</span>
+
+                    <span class="sunflower-icon">
+                        🌻
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         FIRST MESSAGE
+    ========================== -->
+
+        <section id="mainMessage">
+
+            <p class="message-small">
+                under the same moon
+            </p>
+
+
+            <h2>
+
+                For you,
+
+                <span>
+                    Mehu.
+                </span>
+
+            </h2>
+
+        </section>
+
+
+
+        <!-- =========================
+         SECOND MESSAGE
+    ========================== -->
+
+        <section id="finalMessage">
+
+            <div class="speech-line"></div>
+
+            <p>
+                This one is for you.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+         MUSIC
+    ========================== -->
+
+        <audio id="bgMusic" src="./audio/song.mp3" preload="auto" loop playsinline></audio>
+
+
+        <!-- =========================
+         MUSIC BUTTON
+    ========================== -->
+
+        <button id="musicButton" class="music-button" aria-label="Toggle music">
+
+            ♪
+
+        </button>
+
+
+        <!-- =========================
+         PARTICLE LAYER
+    ========================== -->
+
+        <canvas id="particleCanvas"></canvas>
+
+
+    </div>
+
+
+    <script src="./js/river.js"></script>
+
+    <script src="./js/particle.js"></script>
+
+    <script src="./js/story.js"></script>
+
+    <script src="./js/main.js"></script>
+
+
+</body>
+
+</html>
